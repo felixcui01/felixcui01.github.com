@@ -1,11 +1,11 @@
 
-http://username.github.io/archive.html
-http://username.github.io/atom.xml
-http://username.github.io/categories.html
-http://username.github.io/index.html
-http://username.github.io/pages.html
-http://username.github.io/rss.xml
-http://username.github.io/sitemap.txt
-http://username.github.io/tags.html
+http://felixcui01.github.io/archive.html
+http://felixcui01.github.io/atom.xml
+http://felixcui01.github.io/categories.html
+http://felixcui01.github.io/index.html
+http://felixcui01.github.io/pages.html
+http://felixcui01.github.io/rss.xml
+http://felixcui01.github.io/sitemap.txt
+http://felixcui01.github.io/tags.html
 
-http://username.github.io/lessons/2011/12/29/jekyll-introduction
+http://felixcui01.github.io/lessons/2011/12/29/test
