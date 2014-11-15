@@ -14,8 +14,7 @@ tags : [spark, yarn]
 * Spark Execuor: 一个jvm进程，可以并发执行Task；对于同一个app，每个节点上会有多个Executor进程？
 
 ##任务提交
-###提交命令
-* 具体提交的Yarn集群通过YARN_CONF_DIR中的配置文件获取；
+* 提交命令,具体提交的Yarn集群通过YARN_CONF_DIR中的配置文件获取；
 
 ```
     ./bin/spark-submit
