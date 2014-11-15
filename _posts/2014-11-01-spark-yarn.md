@@ -33,7 +33,7 @@ tags : [spark, yarn]
 ##Yarn-Cluster
 * Yarn-Cluster部署模式主要包括三个核心组件：Client，AppMaster，AppSlave；Client负责提交作业(实际上请求执行的是AppMaster)，AppMaster负责为所有Task申请资源并调度Task执行，AppSlave负责Task的执行及状态汇报等；
 
-.. image:: resource/yarn-cluster.png
+![yarn-cluster](resource/yarn-cluster.png)
 
 
 ###Client
