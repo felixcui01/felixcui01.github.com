@@ -1,8 +1,8 @@
 ---
 layout: post
-category : Scala
+category : spark
 tagline: "Supporting tagline"
-tags : [scala, tutorial]
+tags : [spark, yarn]
 ---
 {% include JB/setup %}
 
