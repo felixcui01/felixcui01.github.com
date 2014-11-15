@@ -9,5 +9,5 @@ tags : [scala, tutorial]
 给团队内分享的介绍scala的ppt
 
 ## Overview
-* [scala-intro](scala/scala-intro.pdf)
+* [scala-intro](/_posts/scala/scala-intro.pdf)
 
