@@ -123,7 +123,7 @@ Executor::launchTask
 * 该模式下通过SparkSubmit直接在客户端执行用户程序（Driver），而需要的执行资源通过一个独立的yarn app来申请；
 * YarnClientSchedulerBackend启动后会创建Yarn Application并提交给RM；这个Application主要是为job申请资源（AppMaster为ExecutorLauncher，ApplicationSlave为CoarseGrainedExecutorBackend），App也是通过org.apache.spark.deploy.yarn.Client来提交（参数不一样）
 
-.. image:: resource/yarn-client.png
+![yarn-client](/assets/resource/yarn-client.png)
 
 ###AppMaster
 * Yarn-Client模式下AppMaster实际上是ExecutorLauncher，它不会执行Driver程序，只用来为Driver申请资源；
@@ -133,7 +133,7 @@ Executor::launchTask
 * 执行的实际上是CoarseGrainedExecutorBackend，与Yarn-Cluster模式类似；
 
 ##对比
-![client-vs-cluster](https://raw.githubusercontent.com/felixcui01/felixcui-blog/master/source/spark/resource/client-vs-cluster.png)
+![client-vs-cluster](/assets/resource/client-vs-cluster.png)
 
 
 ##TODO
