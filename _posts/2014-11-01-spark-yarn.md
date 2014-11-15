@@ -30,7 +30,6 @@ tags : [spark, yarn]
     - yarn-cluster：driver被封装在AppMaster被yarn调度运行在yarn集群中；这个模式主要用于生产环境中；
     - yarn-client：driver运行在客户端，AppMaster只负责向yarn申请资源，driver拿到资源后负责任务的调度；这个模式主要用于交互模式或debug；
 
-
 ##Yarn-Cluster
 * Yarn-Cluster部署模式主要包括三个核心组件：Client，AppMaster，AppSlave；Client负责提交作业(实际上请求执行的是AppMaster)，AppMaster负责为所有Task申请资源并调度Task执行，AppSlave负责Task的执行及状态汇报等；
 
@@ -73,6 +72,7 @@ tags : [spark, yarn]
     - 申请资源时可以指定启动多少个Executor，除了本地性的请求外，还会申请num_executor个ANY类型的资源请求（没有本地性需求的情况）
     - 对于有本地性要求的资源申请，除了在相应Host上申请外，还要在对应的Rack上申请相同的数量（host上不一定有充足的资源供使用）；
     - 数据本地性相关信息（host->set<Split>）从SparContext.preferredNodeLocationData获取，目前需要自己计算并传入SparkContxt，而不是从RDD中获取，很奇怪（TODO）
+
     ```
         val sc = new SparkContext(sparkConf, InputFormatInfo.computePreferredLocations( Seq\(new InputFormatInfo(conf, classOf[org.apache.hadoop.mapred.TextInputFormat], inputPath)) ))
     ```
@@ -110,10 +110,12 @@ tags : [spark, yarn]
 
 ####执行任务
 * 执行入口
+
 ```
 Executor::launchTask
     -> ThreadPool.execute(new TaskRunner)  //多线程模型
 ```
+
 * 一个Executor是否重复使用，怎么重复使用？（TODO）
 
 
@@ -122,7 +124,6 @@ Executor::launchTask
 * YarnClientSchedulerBackend启动后会创建Yarn Application并提交给RM；这个Application主要是为job申请资源（AppMaster为ExecutorLauncher，ApplicationSlave为CoarseGrainedExecutorBackend），App也是通过org.apache.spark.deploy.yarn.Client来提交（参数不一样）
 
 .. image:: resource/yarn-client.png
-
 
 ###AppMaster
 * Yarn-Client模式下AppMaster实际上是ExecutorLauncher，它不会执行Driver程序，只用来为Driver申请资源；
