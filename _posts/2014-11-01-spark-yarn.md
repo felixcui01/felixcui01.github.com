@@ -133,7 +133,7 @@ Executor::launchTask
 * 执行的实际上是CoarseGrainedExecutorBackend，与Yarn-Cluster模式类似；
 
 ##对比
-.. image:: resource/client-vs-cluster.png
+![client-vs-cluster](https://raw.githubusercontent.com/felixcui01/felixcui-blog/master/source/spark/resource/client-vs-cluster.png)
 
 
 ##TODO
