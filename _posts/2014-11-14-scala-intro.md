@@ -1,10 +1,10 @@
 ---
 layout: post
+title: scala intro
+description: scala intro
 category : Scala
-tagline: "Supporting tagline"
 tags : [scala, tutorial]
 ---
-{% include JB/setup %}
 
 给团队内分享的介绍scala的ppt
 

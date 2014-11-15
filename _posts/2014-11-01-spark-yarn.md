@@ -1,10 +1,10 @@
 ---
 layout: post
+title: spark yarn internal
+description: spark yarn模式分析
 category : spark
-tagline: "Supporting tagline"
 tags : [spark, yarn]
 ---
-{% include JB/setup %}
 
 #Spark Yarn Internal
 
