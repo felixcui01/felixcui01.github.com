@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /page*
+Disallow: /assets
+Sitemap: http://felixcui01.github.com/sitemap.xml

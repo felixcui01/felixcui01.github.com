@@ -1,5 +1,40 @@
 ---
 layout: default
 ---
-{% include JB/setup %}
-{% include themes/twitter/post.html %}
+<time class="small">{{ page.date | date: "%Y.%m.%d" }}</time>
+<div class="post-title"><h1> {{ page.title }}  {% if page.tagline %}<small>{{page.tagline}}</small>{% endif %}</h1></div>
+
+<div>{{ content }}</div>
+
+<br/>
+
+<div id="pay" style="text-align:center;">
+  ----EOF-----
+  <br>
+  {% include support.html %}
+</div>
+
+<ul class="list-inline">
+  <li><i class="glyphicon glyphicon-share"></i></li><li>Share to:</li>
+    <li><a target="blank" href="http://share.baidu.com/s?type=text&amp;searchPic=0&amp;sign=on&amp;to=tsina&amp;url={{ site.url }}{{ page.url }}/&amp;title=「{{ page.title }}」-分享自{{ site.title }}">新浪微博</a></li>
+    <li><a target="blank" href="http://share.baidu.com/s?type=text&amp;searchPic=0&amp;sign=on&amp;to=tqq&amp;url={{ site.url }}{{ page.url }}/&amp;title=「{{ page.title }}」-分享自{{ site.title }}">腾讯微博</a></li>
+    <li><a target="blank" href="http://s.evernote.com/grclip?url={{ site.url }}{{ page.url }}/&amp;title=「{{ page.title }}」-分享自{{ site.title }}">印象笔记</a></li>
+    <li><a target="blank" href="http://share.baidu.com/s?type=text&amp;searchPic=0&amp;sign=on&amp;to=douban&amp;url={{ site.url }}{{ page.url }}/&amp;title=「{{ page.title }}」-分享自{{ site.title }}">豆瓣</a></li>
+    <li><a href="mailto:?subject=[{{ site.author.name }}]好文分享：{{ page.title }}&amp;body={{ site.url }}{{ page.url }}/">Email</a></li>
+</ul>
+
+<ul class="pager">
+  {% if page.previous %}
+  <li class="previous"><a  href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; Prev</a></li>
+  {% else %}
+  <li class="previous disabled"><a href="#">&larr; Prev</a></li>
+  {% endif %}
+  {% if page.next %}
+  <li class="next"><a href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">Next &rarr;</a></li>
+  {% else %}
+  <li class="next disabled"><a href="#">Next &rarr;</a></li>
+  {% endif %}
+</ul>
+
+{% include comments.html %}
+
